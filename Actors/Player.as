@@ -73,7 +73,12 @@ package Actors
 		public override function startTurn() {
 			ready = true;
 		}
-		
+
+		public function levelComplete() {
+			var newReplay : Replay = new Replay(previousActions);
+			previousActions = new Vector.<int>;
+			pos = new Position(5,5); //TODO set playerspawn     
+		}
 	}
 	
 }

@@ -2,6 +2,8 @@ package Actors
 {
 	public class Replay extends GameObject
 	{
+		public var sprite : Guy;
+
 		private var previousTurns : Vector.<int>;
 		private var turnCounter : int;
 		private var lastAction : int;
@@ -12,9 +14,14 @@ package Actors
 			super();
 			previousTurns = t;
 			turnCounter = 0;
+			
+			sprite = new Guy();
+			addChild(sprite);
+			Game.singleton.stage.addChild(this); 
+
 		}
 		
-		public function startTurn() {
+		public override function startTurn() {
 			if (turnCounter < previousTurns.length) {
 				lastAction = previousTurns[turnCounter];
 				if ((lastAction >= 0)&& (lastAction<=3)) {
@@ -36,6 +43,12 @@ package Actors
 				
 				turnCounter++;
 			}
+			else if (turnCounter == previousTurns.length){
+				finishMovement();
+			}
+		}
+		public function finishMovement() {
+			turnCounter = 0;
 		}
 	}
 }

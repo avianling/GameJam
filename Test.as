@@ -15,7 +15,7 @@ package
 			var g : Game = new Game( stage );
 		
 			var player : Player = new Player();
-			
+
 			var test : MoveDownTest = new MoveDownTest();
 			
 			var gridDisplay : GridDisplay = new GridDisplay();
