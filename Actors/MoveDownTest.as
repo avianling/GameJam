@@ -31,12 +31,25 @@ package Actors
 			
 			ticks--;
 			trace(ticks);
-			y += 100;
+			var i : int = Math.round( Math.random()*3);
+			if ( i==0 ) {
+				setPosition(pos.Gx, pos.Gy - 1);
+			}
+			if ( i==1 ) {
+				setPosition(pos.Gx, pos.Gy + 1);
+			}
+			if ( i==2 ) {
+				setPosition(pos.Gx-1, pos.Gy);
+			}
+			if ( i==3 ) {
+				setPosition(pos.Gx+1, pos.Gy);
+			}
+			
 			if ( ticks <= 0 ) {
 				trace("Is now ready");
 				ready = true;
 			} else {
-				counter = 30;
+				counter = 10;
 			}
 		}
 		

@@ -32,7 +32,7 @@ package Actors
 				//up
 				if ( e.keyCode == 38 ) {
 					rotation = -90;
-					y -= speed;
+					setPosition( pos.Gx, pos.Gy-1);
 					actionCode = Actions.MOVED_UP;
 					Game.singleton.startTurn();
 				}
@@ -40,14 +40,14 @@ package Actors
 				//left
 				if ( e.keyCode == 37 ) {
 					rotation = 180;
-					x -= speed;
+					setPosition( pos.Gx-1, pos.Gy);
 					actionCode = Actions.MOVED_LEFT;
 					Game.singleton.startTurn();
 				}
 				
 				//right
 				if ( e.keyCode == 39 ) {
-					x += speed;
+					setPosition( pos.Gx+1, pos.Gy );
 					rotation = 0;
 					actionCode = Actions.MOVED_RIGHT;
 					Game.singleton.startTurn();
@@ -56,7 +56,7 @@ package Actors
 				
 				//down
 				if ( e.keyCode == 40 ) {
-					y += speed;
+					setPosition( pos.Gx, pos.Gy+1);
 					rotation = 90;
 					actionCode = Actions.MOVED_DOWN;
 					Game.singleton.startTurn();

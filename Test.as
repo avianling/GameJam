@@ -7,7 +7,7 @@ package
 	import Actors.GridDisplay;
 
 	
-	[SWF(width='800', height='600', backgroundColor='#ffffff', frameRate='60')]
+	[SWF(width='801', height='601', backgroundColor='#ffffff', frameRate='60')]
 	public class Test extends Sprite
 	{
 		public function Test()

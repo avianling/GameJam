@@ -6,8 +6,8 @@ package
 		private var py : int;
 		
 		public function Position(gx : int, gy : int) {
-			this.px = gx * Grid.PIXELS_PER_GRID;
-			this.py = gy * Grid.PIXELS_PER_GRID;
+			this.px = (gx+0.5) * Grid.PIXELS_PER_GRID;
+			this.py = (gy+0.5) * Grid.PIXELS_PER_GRID;
 		}
 		
 		public function PixelPosition(px : int, py : int) : Position {

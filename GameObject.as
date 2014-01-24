@@ -9,6 +9,7 @@ package
 		public function GameObject()
 		{
 			Game.singleton.addObject(this);
+			pos = new Position(0,0);
 		}
 		
 		public function update() : void {
