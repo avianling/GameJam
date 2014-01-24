@@ -29,5 +29,9 @@ package
 		public function get Gy() : int {
 			return py / Grid.PIXELS_PER_GRID;
 		}
+		
+		public function toString() : String {
+			return "" + px + "," + py;
+		}
 	}
 }

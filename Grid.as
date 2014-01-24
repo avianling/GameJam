@@ -9,15 +9,17 @@ package
 		private var grid : Dictionary
 		
 		public function Grid() {
+			grid = new Dictionary();
 		}
 		
-		public function	getObjectAtPosition() : GameObject {
-			//TODO
-			return null;
+		public function	getObjectAtPosition(pos: Position) : GameObject {
+			return grid[pos.toString()];
 		}
 		
 		public function setObjectPosition(go : GameObject) : void {
-			//TODO
+			// Using the string representation of positions because otherwise
+			// objects are compared by reference
+			grid[go.pos.toString()] = go;
 		}
 	}
 }
