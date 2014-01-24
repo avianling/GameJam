@@ -1,6 +1,7 @@
 package
 {
 	import flash.utils.Dictionary;
+	import Actors.GridDisplay;
 
 	public class Grid
 	{
@@ -10,6 +11,8 @@ package
 		
 		public function Grid() {
 			grid = new Dictionary();
+			
+			
 		}
 		
 		public function	getObjectAtPosition(pos: Position) : GameObject {
