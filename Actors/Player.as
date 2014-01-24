@@ -2,7 +2,7 @@ package Actors
 {
 	import flash.events.KeyboardEvent;
 	import flash.ui.Keyboard;
-
+	
 	public class Player extends GameObject
 	{
 		public var sprite : Guy;
@@ -20,7 +20,7 @@ package Actors
 			addChild(sprite);
 			Game.singleton.stage.addChild(this); 
 			previousActions = new Vector.<int>();
-						
+			
 			// Setup event listeners
 			Game.singleton.stage.addEventListener( KeyboardEvent.KEY_UP, keyUp );
 		}
@@ -51,7 +51,7 @@ package Actors
 					rotation = 0;
 					actionCode = Actions.MOVED_RIGHT;
 					Game.singleton.startTurn();
-				
+					
 				}
 				
 				//down
@@ -61,15 +61,19 @@ package Actors
 					actionCode = Actions.MOVED_DOWN;
 					Game.singleton.startTurn();
 				}
-			
+				
 				previousActions.push(actionCode);
 			}
+			
+		}
+		public override function update() : void {
+			
 		}
 		
 		public override function startTurn() {
 			ready = true;
 		}
-	
-	}
 		
+	}
+	
 }
