@@ -7,8 +7,6 @@ package Actors
 		private var lastAction : int;
 		private var direction : int;
 		
-		private 
-
 		public function Replay(t : Vector.<int>)
 		{
 			super();
@@ -22,6 +20,16 @@ package Actors
 				if ((lastAction >= 0)&& (lastAction<=3)) {
 					direction = lastAction;
 					// move
+					if (lastAction == Actions.MOVED_UP){
+						setPosition(pos.Gx, (pos.Gy - 1));
+					} else if (lastAction == Actions.MOVED_DOWN) {
+						setPosition(pos.Gx, (pos.Gy + 1));
+					} else if (lastAction == Actions.MOVED_LEFT) {
+						setPosition((pos.Gx - 1), pos.Gy);
+					} else if (lastAction == Actions.MOVED_RIGHT) {
+						setPosition((pos.Gx + 1), pos.Gy);
+					}
+
 				} else if(lastAction = Actions.FIRED_SHOT) {
 					//shoot
 				}
