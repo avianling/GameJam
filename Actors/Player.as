@@ -12,7 +12,8 @@ package Actors
 		public var leftDown : Boolean;
 		public var rightDown : Boolean;
 		
-		public static const speed : Number = 2;
+		public static const speed : Number = 5;
+		public static const rotationSpeed : Number = 5;
 		
 		public function Player()
 		{
@@ -37,13 +38,30 @@ package Actors
 			if ( e.keyCode == 38 ) {
 				upDown = true;
 			}
+			if ( e.keyCode == 37 ) {
+				leftDown = true;
+			}
+			if ( e.keyCode == 39 ) {
+				rightDown = true;
+			}
+			if ( e.keyCode == 40 ) {
+				backDown == true;
+			}
 		}
 		
 		private function keyUp( e : KeyboardEvent ) {
-			upDown = false;
-			leftDown = false;
-			rightDown = false;
-			backDown = false;
+			if ( e.keyCode == 38 ) {
+				upDown = false;
+			}
+			if ( e.keyCode == 37 ) {
+				leftDown = false;
+			}
+			if ( e.keyCode == 39 ) {
+				rightDown = false;
+			}
+			if ( e.keyCode == 40 ) {
+				backDown == false;
+			}
 		}
 		
 		
@@ -55,6 +73,15 @@ package Actors
 			if ( upDown ) {
 				moveForward();
 			}
+			if ( backDown ) {
+				moveBack();
+			}
+			if ( leftDown ) {
+				moveLeft();
+			}
+			if ( rightDown ) {
+				moveRight();
+			}
 		}
 		
 		
@@ -65,6 +92,19 @@ package Actors
 		public function moveForward() {
 			y += speed * Math.sin( rotation * (Math.PI/180) );
 			x += speed * Math.cos( rotation * (Math.PI/180) );
+		}
+		
+		public function moveBack() {
+			y -= speed * Math.sin( rotation * (Math.PI/180) );
+			x -= speed * Math.cos( rotation * (Math.PI/180) );
+		}
+		
+		public function moveLeft() {
+			rotation -= rotationSpeed;
+		}
+		
+		public function moveRight() {
+			rotation += rotationSpeed;
 		}
 		
 		

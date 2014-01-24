@@ -5,7 +5,7 @@ package
 	import Actors.Player;
 
 	
-	[SWF(width='800', height='600', backgroundColor='#000000', frameRate='30')]
+	[SWF(width='800', height='600', backgroundColor='#ffffff', frameRate='60')]
 	public class Test extends Sprite
 	{
 		public function Test()
