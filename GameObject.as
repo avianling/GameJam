@@ -4,6 +4,8 @@ package
 
 	public class GameObject extends Sprite
 	{
+		public var pos : Position;
+		
 		public function GameObject()
 		{
 			Game.singleton.addObject(this);
@@ -15,6 +17,14 @@ package
 		
 		public function destroy() {
 			Game.singleton.removeObject(this);
+		}
+		
+		public function setPosition(gridx  :int, gridy : int) {
+			
+		}
+		
+		public function getPositon() : Position {
+			return pos;
 		}
 	}
 }
