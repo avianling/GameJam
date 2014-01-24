@@ -11,17 +11,20 @@ package
 			Game.singleton.addObject(this);
 		}
 		
-		public function update() {
+		public function update() : void {
 			
 		}
 		
-		public function destroy() {
+		public function destroy() : void {
 			Game.singleton.removeObject(this);
 		}
 
 		
-		public function setPosition(gridx  :int, gridy : int) {
-			
+		public function setPosition(gridx : int, gridy : int) : void {
+			this.pos = new Position(gridx, gridy);
+			x = pos.Px;
+			y = pos.Py;
+			Game.singleton.grid.setObjectPosition(this);
 		}
 		
 		public function getPositon() : Position {
