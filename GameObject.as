@@ -18,6 +18,7 @@ package
 		public function destroy() {
 			Game.singleton.removeObject(this);
 		}
+
 		
 		public function setPosition(gridx  :int, gridy : int) {
 			
@@ -26,5 +27,6 @@ package
 		public function getPositon() : Position {
 			return pos;
 		}
+
 	}
 }
