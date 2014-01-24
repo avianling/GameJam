@@ -4,6 +4,7 @@ package
 	import flash.display.Stage;
 	import Actors.Player;
 	import Actors.MoveDownTest;
+	import Actors.GridDisplay;
 
 	
 	[SWF(width='800', height='600', backgroundColor='#ffffff', frameRate='60')]
@@ -16,6 +17,8 @@ package
 			var player : Player = new Player();
 			
 			var test : MoveDownTest = new MoveDownTest();
+			
+			var gridDisplay : GridDisplay = new GridDisplay();
 		}
 	}
 }

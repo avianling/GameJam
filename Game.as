@@ -14,6 +14,8 @@ package
 			s.addEventListener( Event.ENTER_FRAME, update );
 			objects = new Vector.<GameObject>();
 			
+			grid = new Grid();
+			
 			singleton = this;
 			isPlayerTurn = true;
 		}
