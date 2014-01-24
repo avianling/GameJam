@@ -4,6 +4,8 @@ package
 	{
 		private var subject : GameObject;
 		
+		
+		
 		public function Recorder()
 		{
 			super();
@@ -13,6 +15,7 @@ package
 		public override function update() {
 			
 		}
+		
 		public function changeSubject(newPlayer : GameObject) {
 			subject = newPlayer;	
 		}
