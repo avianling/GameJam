@@ -15,6 +15,15 @@ package
 			
 		}
 		
+		/**
+		 * Denotes weather of not this object has finished it's turn calculations.
+		 */
+		public var ready : Boolean;
+		
+		public function startTurn() {
+			ready = true;
+		}
+		
 		public function destroy() : void {
 			Game.singleton.removeObject(this);
 		}

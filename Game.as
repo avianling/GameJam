@@ -15,6 +15,7 @@ package
 			objects = new Vector.<GameObject>();
 			
 			singleton = this;
+			isPlayerTurn = true;
 		}
 		
 		public var objects : Vector.<GameObject>;		
@@ -32,8 +33,30 @@ package
 		}
 		
 		public function update( e : Event ) : void {
+			var anythingNotReady = false;
+			
 			for each ( var o : GameObject in objects ) {
 				o.update();
+				if ( !o.ready ) {
+					anythingNotReady = true;
+				}
+			}
+			
+			if ( !anythingNotReady ) {
+				isPlayerTurn = true;
+			}
+		}
+		
+		/**
+		 * Are we waiting for the player to do stuff?
+		 */
+		public var isPlayerTurn : Boolean;
+		
+		public function startTurn() {
+			isPlayerTurn = false;
+			for each ( var obj : GameObject in objects ) {
+				obj.ready = false;
+				obj.startTurn();
 			}
 		}
 		

@@ -3,6 +3,7 @@ package
 	import flash.display.Sprite;
 	import flash.display.Stage;
 	import Actors.Player;
+	import Actors.MoveDownTest;
 
 	
 	[SWF(width='800', height='600', backgroundColor='#ffffff', frameRate='60')]
@@ -13,6 +14,8 @@ package
 			var g : Game = new Game( stage );
 		
 			var player : Player = new Player();
+			
+			var test : MoveDownTest = new MoveDownTest();
 		}
 	}
 }

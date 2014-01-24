@@ -27,43 +27,49 @@ package Actors
 		
 		// Stuff to workout keyboard state.		
 		private function keyUp( e : KeyboardEvent ) {
-			var actionCode : int;
-			//up
-			if ( e.keyCode == 38 ) {
-				rotation = -90;
-				y -= speed;
-				actionCode = Actions.MOVED_UP;
-			}
-			//left
-			if ( e.keyCode == 37 ) {
-				rotation = 180;
-				x -= speed;
-				actionCode = Actions.MOVED_LEFT;
-			}
-			//right
-			if ( e.keyCode == 39 ) {
-				x += speed;
-				rotation = 0;
-				actionCode = Actions.MOVED_RIGHT;
-
-			}
-			//down
-			if ( e.keyCode == 40 ) {
-				y += speed;
-				rotation = 90;
-				actionCode = Actions.MOVED_DOWN;
-			}
+			if ( Game.singleton.isPlayerTurn ) {
+				var actionCode : int;
+				//up
+				if ( e.keyCode == 38 ) {
+					rotation = -90;
+					y -= speed;
+					actionCode = Actions.MOVED_UP;
+					Game.singleton.startTurn();
+				}
+				
+				//left
+				if ( e.keyCode == 37 ) {
+					rotation = 180;
+					x -= speed;
+					actionCode = Actions.MOVED_LEFT;
+					Game.singleton.startTurn();
+				}
+				
+				//right
+				if ( e.keyCode == 39 ) {
+					x += speed;
+					rotation = 0;
+					actionCode = Actions.MOVED_RIGHT;
+					Game.singleton.startTurn();
+				
+				}
+				
+				//down
+				if ( e.keyCode == 40 ) {
+					y += speed;
+					rotation = 90;
+					actionCode = Actions.MOVED_DOWN;
+					Game.singleton.startTurn();
+				}
 			
-			previousActions.push(actionCode);
+				previousActions.push(actionCode);
+			}
 		}
 		
-		
-		public override function update() {
-			
+		public override function startTurn() {
+			ready = true;
 		}
-		
-		public function turn(){
-			// move
-		}
+	
 	}
+		
 }
