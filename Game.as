@@ -12,12 +12,13 @@ package
 			stage = s;
 			s.addEventListener( Event.ENTER_FRAME, update );
 			objects = new Vector.<GameObject>();
+			recorder = new Recorder();
 			
 			singleton = this;
 		}
 		
 		public var objects : Vector.<GameObject>;
-		
+		public var recorder : Recorder;		
 		public static var singleton : Game;
 		
 		public function addObject( object : GameObject ) {
