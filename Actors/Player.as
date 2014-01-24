@@ -63,6 +63,9 @@ package Actors
 				}
 				
 				previousActions.push(actionCode);
+				if (pos = new Position(5,5)) {
+					levelComplete();
+				}
 			}
 			
 		}
